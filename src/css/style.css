@@ -1,0 +1,489 @@
+/* Mereset elemen bawaan html */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Styling header */
+header {
+  background-color: rgb(22, 78, 99);
+  position: fixed;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 10;
+}
+
+header p a {
+  font-size: min(4vw, 24px);
+  font-weight: bold;
+  text-decoration: none;
+  color: #eee;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  position: relative;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ccc;
+  font-size: min(2.2vw, 16px);
+  font-weight: 600;
+  padding: 20px 1.5vw 19px;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #eee;
+}
+
+section:not(#main, #products) {
+  padding: 0 4.8vw 6.4vw;
+}
+
+section:nth-child(odd) {
+  background-color: rgb(14, 116, 144);
+}
+
+section:nth-child(even) {
+  background-color: #eee;
+}
+
+input[type="radio"],
+input[type="checkbox"],
+input[type="date"],
+select {
+  cursor: pointer;
+}
+
+/* Styling main */
+#main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#main::after {
+  content: "Welcome to AFN's Hotel";
+  position: absolute;
+  color: #eee;
+  text-shadow: 0px 2px 8px #000;
+  font-weight: bold;
+  font-size: 5vw;
+}
+
+#main img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center 30%;
+  animation: images 0.3s;
+}
+
+/* Animasi untuk #main img */
+@keyframes images {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Styling produk */
+#products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #eee;
+  background-color: rgb(14, 116, 144);
+  padding: 0 60px 6.4vw;
+}
+
+#products h1 {
+  padding: 7vw 0 3vw;
+  text-align: center;
+  font-size: min(30px, 4vw);
+}
+
+#products .grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 40px;
+}
+
+.grid .product-tile {
+  text-align: center;
+  box-shadow: 0 0px 4px rgb(8 51 68);
+  border-radius: 5px;
+}
+
+.product-tile a {
+  text-decoration: none;
+}
+
+.product-tile a img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
+  margin: 0;
+}
+
+.product-tile a p {
+  background-color: rgb(8 51 68);
+  color: #eee;
+  padding: 15px;
+  margin-top: -5px;
+  font-size: 22px;
+  font-weight: 500;
+  border-radius: 0 0 5px 5px;
+}
+
+/* Styling daftar harga */
+#price-list h1 {
+  padding: 7vw 0 3vw;
+  text-align: center;
+  font-size: min(30px, 4vw);
+  color: rgb(8 51 68);
+}
+
+#price-list .price-list-box {
+  display: flex;
+  justify-content: center;
+  color: #eee;
+}
+
+#price-list .price-list-box .card {
+  width: 300px;
+  min-width: 200px;
+  margin: 0 15px;
+  padding: 20px 10px 10px;
+  text-align: center;
+  position: relative;
+}
+
+#price-list .price-list-box .card h3 {
+  margin: 1vw;
+  font-size: min(18px, 2.7vw);
+}
+
+#price-list .price-list-box .card p {
+  margin: 2vw;
+  font-size: min(24px, 3.6vw);
+}
+
+#price-list .card-1 {
+  background-color: #a13024;
+  border: 3px solid #e25242;
+}
+
+#price-list .card-2 {
+  background-color: #324934;
+  border: 3px solid #567b59;
+}
+
+#price-list .card-3 {
+  background-color: #6b6624;
+  border: 3px solid #b6ae3d;
+}
+
+#price-list :is(.card-1, .card-2)::after {
+  content: "";
+  border: 20px solid transparent;
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#price-list .card-1::after {
+  border-left-color: #e25242;
+}
+
+#price-list .card-2::after {
+  border-left-color: #567b59;
+}
+
+/* Styling tentang kami */
+#about-us {
+  color: #eee;
+}
+
+#about-us h1 {
+  padding: 7vw 0 3vw;
+  font-size: min(30px, 4vw);
+  text-align: center;
+}
+
+#about-us table {
+  margin: auto;
+  font-size: min(20px, 3vw);
+}
+
+#about-us table td {
+  padding: min(8px, 1.2vw);
+}
+
+/* Styling form pemesanan */
+#booking-room * {
+  color: rgb(8 51 68);
+}
+
+#booking-room h1 {
+  padding: 7vw 0 3vw;
+  text-align: center;
+  font-size: min(30px, 4vw);
+}
+
+#booking-room form {
+  margin: auto;
+  padding: 2vw 5vw 0;
+  width: 50%;
+  height: 80%;
+}
+
+#booking-room label {
+  display: block;
+  margin: 1.5vw 0;
+  font-size: min(1.2rem, 2.8vw);
+}
+
+#booking-room :is(#gender-label *, #breakfast-label *) {
+  display: inline-block;
+  width: unset;
+}
+
+#booking-room :is(#gender-label #male, #breakfast-label *) {
+  margin-left: min(70px, 7vw);
+}
+
+#booking-room #gender-label #female {
+  margin-left: min(30px, 3vw);
+}
+
+#booking-room select#room-type {
+  font-size: min(1rem, 2.3vw);
+  margin-top: 1vw;
+  width: 100%;
+  padding: 1vw;
+  border-radius: 5px;
+  border: 1px solid #777;
+}
+
+#booking-room :is(input, textarea, :is(:focus)) {
+  font-size: min(1rem, 2.3vw);
+  margin-top: 1vw;
+  border-radius: 5px;
+  width: calc(100% - 2.3vw);
+  padding: 1vw;
+  border: 1px solid #777;
+}
+
+#booking-room :is(input, textarea, :is(:focus)):invalid {
+  border: 1px solid #e25242;
+  outline: none;
+}
+
+#booking-room :is(input, textarea, :is(:focus)):invalid ~ .alert {
+  display: unset;
+}
+
+#booking-room .alert {
+  display: none;
+  color: #e25242;
+  font-size: min(1rem, 2.3vw);
+}
+
+#booking-room #list-button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#booking-room #list-button input {
+  width: 30%;
+  padding: 0.7vw;
+  color: white;
+  font-size: min(1.2rem, 2.8vw);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#booking-room #list-button #btn-total-price {
+  width: 30%;
+  padding: 0.7vw;
+  color: white;
+  font-size: min(1.2rem, 2.8vw);
+  margin-top: 1vw;
+  border-radius: 5px;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  background-color: #6b6624;
+  border: 2px solid #b6ae3d;
+}
+
+#booking-room #list-button #btn-save {
+  background-color: #324934;
+  border: 2px solid #567b59;
+}
+
+#booking-room #list-button #btn-cancel {
+  background-color: #a13024;
+  border: 2px solid #e25242;
+}
+
+#booking-room #list-button #btn-total-price:hover {
+  background-color: transparent;
+  color: #aca439;
+}
+
+#booking-room #list-button #btn-save:hover {
+  background-color: transparent;
+  color: #4d6d4f;
+}
+
+#booking-room #list-button #btn-cancel:hover {
+  background-color: transparent;
+  color: #cf4b3c;
+}
+
+/* Styling div detail pesanan */
+.detail-pesanan {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow-x: hidden;
+  color: #eee;
+}
+
+.detail-box {
+  position: absolute;
+  top: 10vh;
+  left: 25vw;
+  width: 50vw;
+  background-color: rgb(8, 34, 43);
+  box-sizing: border-box;
+  border-radius: 0.5vw;
+  border: 1px solid #777;
+}
+
+.detail-box p {
+  margin: 0 20px;
+  font-weight: 500;
+}
+
+.detail-box .selamat {
+  margin-top: 15px;
+  font-size: min(24px, 3.6vw);
+  text-align: justify;
+}
+
+.detail-box .penting {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: min(20px, 3vw);
+  color: #fc6d5e;
+  text-align: justify;
+}
+
+.detail-box .rincian {
+  margin-top: 15px;
+  font-size: min(18px, 2.7vw);
+  text-align: center;
+}
+
+.detail-box table {
+  margin: 15px auto;
+  font-size: min(16px, 2.4vw);
+}
+
+.detail-box table td {
+  padding: min(4px, 0.6vw);
+}
+
+.detail-box .btn-close {
+  position: relative;
+  font-size: min(16px, 2.4vw);
+  font-weight: 500;
+  padding: 8px;
+  background-color: #a13024;
+  border: 2px solid #e25242;
+  border-radius: 5px;
+  color: #eee;
+  margin: 15px 20px 15px 0;
+  float: right;
+  cursor: pointer;
+}
+
+.detail-box .btn-close:hover {
+  background-color: #eee;
+  border: 2px solid #a13024;
+  color: #a13024;
+}
+
+/* Styling footer */
+footer {
+  background-color: rgb(15, 60, 75);
+  color: white;
+  padding: min(3vw, 30px);
+  padding-bottom: min(5vw, 50px);
+}
+
+footer p {
+  text-align: center;
+  font-weight: 500;
+  font-size: min(20px, 3vw);
+}
+
+/* Styling web responsif */
+@media screen and (max-width: 700px) {
+  #price-list .price-list-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #price-list .price-list-box .card {
+    width: 80%;
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  #price-list :is(.card-1, .card-2)::after {
+    content: "";
+    border: 20px solid transparent;
+    position: absolute;
+    right: 50%;
+    top: 100%;
+    transform: translateX(50%);
+  }
+
+  #price-list .card-1::after {
+    border-top-color: #e25242;
+  }
+
+  #price-list .card-2::after {
+    border-top-color: #567b59;
+  }
+
+  #booking-room form {
+    width: 70%;
+  }
+}
